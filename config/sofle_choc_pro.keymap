@@ -30,7 +30,6 @@
 #include <dt-bindings/zmk/pointing.h>
 
 / {
-
   // Activate ADJUST layer by pressing raise and lower
   conditional_layers {
     compatible = "zmk,conditional-layers";
@@ -202,16 +201,16 @@
       // ├─────┼─────┼─────┼─────┼─────┼─────┼──────────────────┼─────┼─────┼─────┼─────┼─────┼─────┤
       // │ SHFT│  V  │  A  │  S  │  D  │  F  │                  │     │     │     │     │     │     │
       // ├─────┼─────┼─────┼─────┼─────┼─────┼──────────────────┼─────┼─────┼─────┼─────┼─────┼─────┤
-      // │ CTRL│  B  │  Z  │     │  C  │  G  │     ···  ···     │     │     │     │     │     │     │
+      // │ CTRL│  B  │     │     │ C|P │  G  │     ···  ···     │     │     │     │     │     │     │
       // └─────┴─────┴─────┴─────┴─────┴─────┴──────────────────┴─────┴─────┴─────┴─────┴─────┴─────┘
       // ┌─────┬─────┬─────┬─────┬─────┬──────────────────────────────┬─────┬─────┬─────┬─────┬─────┐
       // │     │     │     │AB:I │SPACE│                              │     │     │     │     │     │
       // └─────┴─────┴─────┴─────┴─────┴──────────────────────────────┴─────┴─────┴─────┴─────┴─────┘
       bindings = <
-        &kp ESC   &kp N4 &kp N2  &kp N3 &kp N1 &kp N5                           &none  &none  &none  &none  &none  &tog ABI
-        &kp TAB   &none  &kp Q   &kp W  &kp E  &kp R                            &none  &none  &none  &none  &none  &none
-        &kp LSHFT &kp V  &kp A   &kp S  &kp D  &kp F                            &none  &none  &none  &none  &none  &none
-        &kp LCTRL &kp B  &kp Z   &none  &kp C  &kp G     &trans     &trans      &none  &none  &none  &none  &none  &none
+        &kp ESC   &kp N4 &kp N2  &kp N3 &kp N1  &kp N5                           &none  &none  &none  &none  &none  &tog ABI
+        &kp TAB   &none  &kp Q   &kp W  &kp E   &kp R                            &none  &none  &none  &none  &none  &none
+        &kp LSHFT &kp V  &kp A   &kp S  &kp D   &kp F                            &none  &none  &none  &none  &none  &none
+        &kp LCTRL &kp B  &kp Z   &none  &mt Z C &kp G     &trans     &trans      &none  &none  &none  &none  &none  &none
           &none  &none  &none  &mo ABIALT &kp SPACE                                 &none  &none  &none  &none  &none
       >;
       sensor-bindings = <&inc_dec_kp PG_DN PG_UP &inc_dec_kp C_VOL_DN C_VOL_UP>;
