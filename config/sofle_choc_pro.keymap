@@ -196,22 +196,22 @@
     abi_layer {
       display-name = "ab:i";
       // ┌─────┬─────┬─────┬─────┬─────┬─────┬──────────────────┬─────┬─────┬─────┬─────┬─────┬─────┐
-      // │ ESC │  1  │  2  │  3  │  4  │  5  │                  │     │     │     │     │     │AB:I │
+      // │ ESC │  4  │  2  │  3  │  1  │  5  │                  │     │     │     │     │     │AB:I │
       // ├─────┼─────┼─────┼─────┼─────┼─────┼──────────────────┼─────┼─────┼─────┼─────┼─────┼─────┤
       // │ TAB │     │  Q  │  W  │  E  │  R  │                  │     │     │     │     │     │     │
       // ├─────┼─────┼─────┼─────┼─────┼─────┼──────────────────┼─────┼─────┼─────┼─────┼─────┼─────┤
-      // │ SHFT│     │  A  │  S  │  D  │  F  │                  │     │     │     │     │     │     │
+      // │ SHFT│  V  │  A  │  S  │  D  │  F  │                  │     │     │     │     │     │     │
       // ├─────┼─────┼─────┼─────┼─────┼─────┼──────────────────┼─────┼─────┼─────┼─────┼─────┼─────┤
-      // │ CTRL│  B  │  X  │     │  C  │  G  │     ···  ···     │     │     │     │     │     │     │
+      // │ CTRL│  B  │  Z  │     │  C  │  G  │     ···  ···     │     │     │     │     │     │     │
       // └─────┴─────┴─────┴─────┴─────┴─────┴──────────────────┴─────┴─────┴─────┴─────┴─────┴─────┘
       // ┌─────┬─────┬─────┬─────┬─────┬──────────────────────────────┬─────┬─────┬─────┬─────┬─────┐
       // │     │     │     │AB:I │SPACE│                              │     │     │     │     │     │
       // └─────┴─────┴─────┴─────┴─────┴──────────────────────────────┴─────┴─────┴─────┴─────┴─────┘
       bindings = <
-        &kp ESC   &kp N1 &kp N2  &kp N3 &kp N4 &kp N5                           &none  &none  &none  &none  &none  &tog ABI
+        &kp ESC   &kp N4 &kp N2  &kp N3 &kp N1 &kp N5                           &none  &none  &none  &none  &none  &tog ABI
         &kp TAB   &none  &kp Q   &kp W  &kp E  &kp R                            &none  &none  &none  &none  &none  &none
-        &kp LSHFT &none  &kp A  &kp S   &kp D  &kp F                            &none  &none  &none  &none  &none  &none
-        &kp LCTRL &kp B  &kp X   &none  &kp C  &kp G     &trans     &trans      &none  &none  &none  &none  &none  &none
+        &kp LSHFT &kp V  &kp A   &kp S   &kp D  &kp F                            &none  &none  &none  &none  &none  &none
+        &kp LCTRL &kp B  &kp Z   &none  &kp C  &kp G     &trans     &trans      &none  &none  &none  &none  &none  &none
           &none  &none  &none  &mo ABIALT &kp SPACE                                 &none  &none  &none  &none  &none
       >;
       sensor-bindings = <&inc_dec_kp PG_DN PG_UP &inc_dec_kp C_VOL_DN C_VOL_UP>;
@@ -224,9 +224,9 @@
       // ├─────┼─────┼─────┼─────┼─────┼─────┼──────────────────┼─────┼─────┼─────┼─────┼─────┼─────┤
       // │ TAB │     │  Q  │  W  │  E  │  T  │                  │     │     │     │     │     │     │
       // ├─────┼─────┼─────┼─────┼─────┼─────┼──────────────────┼─────┼─────┼─────┼─────┼─────┼─────┤
-      // │ SHFT│     │  A  │  S  │  D  │  F  │                  │     │     │     │     │     │     │
+      // │ SHFT│  V  │  A  │  S  │  D  │  F  │                  │     │     │     │     │     │     │
       // ├─────┼─────┼─────┼─────┼─────┼─────┼──────────────────┼─────┼─────┼─────┼─────┼─────┼─────┤
-      // │ CTRL│  B  │     │     │  C  │  G  │     ···  ···     │     │     │     │     │     │     │
+      // │ CTRL│  B  │     │     │  C  │  N  │     ···  ···     │     │     │     │     │     │     │
       // └─────┴─────┴─────┴─────┴─────┴─────┴──────────────────┴─────┴─────┴─────┴─────┴─────┴─────┘
       // ┌─────┬─────┬─────┬─────┬─────┬──────────────────────────────┬─────┬─────┬─────┬─────┬─────┐
       // │LGUI │     │     │ ... │SPACE│                              │     │     │     │     │     │
@@ -234,8 +234,8 @@
       bindings = <
         &kp ESC   &kp N6 &kp N7  &kp N8 &kp N9 &kp N0                           &none  &none  &none  &none  &none  &none
         &kp TAB   &none  &kt Q   &kp W  &kt E  &kp T                            &none  &none  &none  &none  &none  &none
-        &kp LSHFT &none  &kp S   &kp D  &kp F  &kp F                            &none  &none  &none  &none  &none  &none
-        &kp LCTRL &kp B  &none   &none  &kp C  &kp G     &trans     &trans      &none  &none  &none  &none  &none  &none
+        &kp LSHFT &kp V  &kp A   &kp S  &kp D  &kp F                            &none  &none  &none  &none  &none  &none
+        &kp LCTRL &kp B  &none   &none  &kp C  &kp N     &trans     &trans      &none  &none  &none  &none  &none  &none
           &kp LGUI  &none  &none  &trans &kp SPACE                                 &none  &none  &none  &none  &none
       >;
       sensor-bindings = <&inc_dec_kp PG_DN PG_UP &inc_dec_kp C_VOL_DN C_VOL_UP>;
