@@ -129,9 +129,9 @@
       // UNLK = unlock Sofle Studio  ·  m = mouse move  ·  s = scroll  ·  ··· = transparent
       display-name = "adjust";
       bindings = <
-        &studio_unlock &none          &none          &none        &none           &none                          &to 0           &none           &none         &none            &none   &none
+        &studio_unlock &none          &none          &none        &none           &none                          &tog DAYZA      &none           &none         &none            &none   &none
         &none          &none          &none          &none        &none           &none                          &none           &none           &none         &none            &none   &none
-        &mkp MB5       &mkp MB4       &mkp MB2       &mkp MB3     &mkp MB1        &none                          &none           &none           &none         &none            &none   &none
+        &mkp MB5       &mkp MB4       &mkp MB2       &mkp MB3     &mkp MB1        &none                          &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &none   &none
         &bt BT_CLR     &msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_UP &msc SCRL_RIGHT &none   &trans    &trans       &none           &none           &none         &none            &none   &none
          &trans       &trans       &trans       &trans          &trans                &trans    &trans    &trans    &trans    &trans
       >;
@@ -153,11 +153,11 @@
       // │     │     │     │DAYZB│SPACE│                              │     │     │     │     │     │
       // └─────┴─────┴─────┴─────┴─────┴──────────────────────────────┴─────┴─────┴─────┴─────┴─────┘
       bindings = <
-        &kp ESC   &kp N1 &kp N2  &kp N3 &kp N4 &kp N5                           &to 4  &none  &none  &none  &none  &none
-        &kp TAB   &none  &kt Q   &kp W  &kt E  &kp R                            &none  &none  &none  &none  &none  &none
-        &kp LSHFT &none  &kp A  &kp S   &kp D  &kp F                            &none  &none  &none  &none  &none  &none
-        &kp LCTRL &kp B  &kp X   &none  &kp C  &kp G     &trans     &trans      &none  &none  &none  &none  &none  &none
-          &none  &none  &none  &mo 5 &kp SPACE                                 &none  &none  &none  &none  &none
+        &kp ESC   &kp N1 &kp N2  &kp N3 &kp N4 &kp N5                           &tog DAYZA &none  &none  &none  &none  &none
+        &kp TAB   &none  &kt Q   &kp W  &kt E  &kp R                            &none      &none  &none  &none  &none  &none
+        &kp LSHFT &none  &kp A  &kp S   &kp D  &kp F                            &none      &none  &none  &none  &none  &none
+        &kp LCTRL &kp B  &kp X   &none  &kp C  &kp G     &trans     &trans      &none      &none  &none  &none  &none  &none
+          &none  &none  &none  &mo DAYZB &kp SPACE                                 &none  &none  &none  &none  &none
       >;
       sensor-bindings = <&inc_dec_kp PG_DN PG_UP &inc_dec_kp PG_DN PG_UP>;
     };
