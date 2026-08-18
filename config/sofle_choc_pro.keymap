@@ -129,15 +129,16 @@
       // UNLK = unlock Sofle Studio  ·  m = mouse move  ·  s = scroll  ·  ··· = transparent
       display-name = "adjust";
       bindings = <
-        &studio_unlock &none          &none          &none        &none           &none                          &tog 4          &none           &none         &none            &none   &none
+        &studio_unlock &none          &none          &none        &none           &none                          &to 4           &none           &none         &none            &none   &none
         &none          &none          &none          &none        &none           &none                          &none           &none           &none         &none            &none   &none
         &mkp MB5       &mkp MB4       &mkp MB2       &mkp MB3     &mkp MB1        &none                          &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &none   &none
         &bt BT_CLR     &msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_UP &msc SCRL_RIGHT &none   &trans    &trans       &none           &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4
          &trans       &trans       &trans       &trans          &trans                &trans    &trans    &trans    &trans    &trans
       >;
+      sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_PREV C_NEXT>;
     };
 
-    dayza {
+    dayza_layer {
       display-name = "dayz a";
       // ┌─────┬─────┬─────┬─────┬─────┬─────┬──────────────────┬─────┬─────┬─────┬─────┬─────┬─────┐
       // │ ESC │  1  │  2  │  3  │  4  │  5  │                  │DAYZA│     │     │     │     │     │
@@ -152,17 +153,16 @@
       // │     │     │     │DAYZB│SPACE│                              │     │     │     │     │     │
       // └─────┴─────┴─────┴─────┴─────┴──────────────────────────────┴─────┴─────┴─────┴─────┴─────┘
       bindings = <
-        &kp ESC   &kp N1 &kp N2  &kp N3 &kp N4 &kp N5                           &tog 4 &none  &none  &none  &none  &none
-        &kp TAB   &none  &kp Q   &kp W  &kp E  &kp R                            &none  &none  &none  &none  &none  &none
+        &kp ESC   &kp N1 &kp N2  &kp N3 &kp N4 &kp N5                           &to 4  &none  &none  &none  &none  &none
+        &kp TAB   &none  &kt Q   &kp W  &kt E  &kp R                            &none  &none  &none  &none  &none  &none
         &kp LSHFT &none  &kp S   &kp D  &kp F  &kp F                            &none  &none  &none  &none  &none  &none
         &kp LCTRL &kp B  &kp X   &none  &kp C  &kp G      &none     &none       &none  &none  &none  &none  &none  &none
           &none  &none  &none  &mo 5 &kp SPACE                                 &none  &none  &none  &none  &none
       >;
-
-      sensor-bindings = <&inc_dec_kp PG_DN PG_UP &none>;
+      sensor-bindings = <&inc_dec_kp PG_DN PG_UP &inc_dec_kp PG_DN PG_UP>;
     };
     
-    dayzb {
+    dayzb_layer {
       display-name = "dayz b";
       // ┌─────┬─────┬─────┬─────┬─────┬─────┬──────────────────┬─────┬─────┬─────┬─────┬─────┬─────┐
       // │ ESC │  6  │  7  │  8  │  9  │  0  │                  │     │     │     │     │     │     │
@@ -178,13 +178,12 @@
       // └─────┴─────┴─────┴─────┴─────┴──────────────────────────────┴─────┴─────┴─────┴─────┴─────┘
       bindings = <
         &kp ESC   &kp N1 &kp N2  &kp N3 &kp N4 &kp N5                           &none  &none  &none  &none  &none  &none
-        &kp TAB   &none  &kp Q   &kp W  &kp E  &kp T                            &none  &none  &none  &none  &none  &none
+        &kp TAB   &none  &kt Q   &kp W  &kt E  &kp T                            &none  &none  &none  &none  &none  &none
         &kp LSHFT &none  &kp S   &kp D  &kp F  &kp F                            &none  &none  &none  &none  &none  &none
         &kp LCTRL &kp B  &none   &none  &kp C  &kp G      &none     &none       &none  &none  &none  &none  &none  &none
           &none  &none  &none  &trans &kp SPACE                                 &none  &none  &none  &none  &none
       >;
-
-      sensor-bindings = <&inc_dec_kp PG_DN PG_UP &none>;
+      sensor-bindings = <&inc_dec_kp PG_DN PG_UP &inc_dec_kp PG_DN PG_UP>;
     };
 
   };
