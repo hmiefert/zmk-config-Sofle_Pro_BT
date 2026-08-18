@@ -161,7 +161,7 @@
       // └─────┴─────┴─────┴─────┴─────┴──────────────────────────────┴─────┴─────┴─────┴─────┴─────┘
       bindings = <
         &kp ESC   &kp N1 &kp N2  &kp N3 &kp N4 &kp N5                           &none  &none  &none  &none  &none  &tog DAYZ
-        &kp TAB   &none  &kt Q   &kp W  &kt E  &kp R                            &none  &none  &none  &none  &none  &none
+        &kp TAB   &none  &kp Q   &kp W  &kp E  &kp R                            &none  &none  &none  &none  &none  &none
         &kp LSHFT &none  &kp A  &kp S   &kp D  &kp F                            &none  &none  &none  &none  &none  &none
         &kp LCTRL &kp B  &kp X   &none  &kp C  &kp G     &trans     &trans      &none  &none  &none  &none  &none  &none
           &none  &none  &none  &mo DAYZALT &kp SPACE                                 &none  &none  &none  &none  &none
@@ -209,7 +209,7 @@
       // └─────┴─────┴─────┴─────┴─────┴──────────────────────────────┴─────┴─────┴─────┴─────┴─────┘
       bindings = <
         &kp ESC   &kp N1 &kp N2  &kp N3 &kp N4 &kp N5                           &none  &none  &none  &none  &none  &tog ABI
-        &kp TAB   &none  &kt Q   &kp W  &kt E  &kp R                            &none  &none  &none  &none  &none  &none
+        &kp TAB   &none  &kp Q   &kp W  &kp E  &kp R                            &none  &none  &none  &none  &none  &none
         &kp LSHFT &none  &kp A  &kp S   &kp D  &kp F                            &none  &none  &none  &none  &none  &none
         &kp LCTRL &kp B  &kp X   &none  &kp C  &kp G     &trans     &trans      &none  &none  &none  &none  &none  &none
           &none  &none  &none  &mo ABIALT &kp SPACE                                 &none  &none  &none  &none  &none
@@ -257,7 +257,7 @@
       // └─────┴─────┴─────┴─────┴─────┴──────────────────────────────┴─────┴─────┴─────┴─────┴─────┘
       bindings = <
         &kp ESC   &kp N1 &kp N2  &kp N3 &kp N4 &kp N5                           &none  &none  &none  &none  &none  &tog WDOGS
-        &kp TAB   &none  &kt Q   &kp W  &kt E  &kp R                            &none  &none  &none  &none  &none  &none
+        &kp TAB   &none  &kp Q   &kp W  &kp E  &kp R                            &none  &none  &none  &none  &none  &none
         &kp LSHFT &none  &kp A  &kp S   &kp D  &kp F                            &none  &none  &none  &none  &none  &none
         &kp LCTRL &kp B  &kp X   &none  &kp C  &kp G     &trans     &trans      &none  &none  &none  &none  &none  &none
           &none  &none  &none  &mo WDOGSALT &kp SPACE                                 &none  &none  &none  &none  &none
