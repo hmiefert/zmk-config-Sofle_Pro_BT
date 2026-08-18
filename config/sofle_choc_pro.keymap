@@ -14,8 +14,15 @@
 #define LOWER 1
 #define RAISE 2
 #define ADJUST 3
-#define DAYZA 4
-#define DAYZB 5
+
+#define DAYZ 4
+#define DAYZALT 5
+
+#define ABI 6
+#define ABIALT 7
+
+#define WDOGS 8
+#define WDOGSALT 9
 
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 1500  // default: 600
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
@@ -45,7 +52,7 @@
       // ├─────┼─────┼─────┼─────┼─────┼─────┼──────────────────┼─────┼─────┼─────┼─────┼─────┼─────┤
       // │ CTRL│  A  │  S  │  D  │  F  │  G  │                  │  H  │  J  │  K  │  L  │  ;  │  '  │
       // ├─────┼─────┼─────┼─────┼─────┼─────┼──────────────────┼─────┼─────┼─────┼─────┼─────┼─────┤
-      // │ SHFT│  Z  │  X  │  C  │  V  │  B  │    MUTE  PLAY    │  N  │  M  │  ,  │  .  │  /  │ SHFT│
+      // │ SHFT│  Z  │  X  │  C  │  V  │  B  │    PLAY   MUTE   │  N  │  M  │  ,  │  .  │  /  │ SHFT│
       // └─────┴─────┴─────┴─────┴─────┴─────┴──────────────────┴─────┴─────┴─────┴─────┴─────┴─────┘
       // ┌─────┬─────┬─────┬─────┬─────┬──────────────────────────────┬─────┬─────┬─────┬─────┬─────┐
       // │     │ GUI │ ALT │LOWER│SPACE│                              │ENTER│RAISE│ ALT │ GUI │     │
@@ -54,11 +61,11 @@
         &kp ESC   &kp N1 &kp N2  &kp N3 &kp N4 &kp N5                           &kp N6 &kp N7 &kp N8    &kp N9  &kp N0   &kp DEL
         &kp TAB   &kp Q  &kp W   &kp E  &kp R  &kp T                            &kp Y  &kp U  &kp I     &kp O   &kp P    &kp BSPC
         &kp LCTRL &kp A  &kp S   &kp D  &kp F  &kp G                            &kp H  &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-        &kp LSHFT &kp Z  &kp X   &kp C  &kp V  &kp B   &kp C_MUTE &kp C_PLAY    &kp N  &kp M  &kp COMMA &kp DOT &kp FSLH &kp RSHFT
+        &kp LSHFT &kp Z  &kp X   &kp C  &kp V  &kp B   &kp C_PLAY &kp C_MUTE    &kp N  &kp M  &kp COMMA &kp DOT &kp FSLH &kp RSHFT
           &none &kp LGUI &kp LALT &mo LOWER &kp SPACE      &kp RET &mo RAISE &kp RALT &kp RGUI &none
       >;
 
-      sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_PREV C_NEXT>;
+      sensor-bindings = <&inc_dec_kp C_PREV C_NEXT &inc_dec_kp C_VOL_DN C_VOL_UP>;
     };
 
     lower_layer {
@@ -70,7 +77,7 @@
       // ├─────┼─────┼─────┼─────┼─────┼─────┼──────────────────┼─────┼─────┼─────┼─────┼─────┼─────┤
       // │ ··· │ ESC │     │     │     │     │                  │  ←  │  ↓  │  ↑  │  →  │     │RCTRL│
       // ├─────┼─────┼─────┼─────┼─────┼─────┼──────────────────┼─────┼─────┼─────┼─────┼─────┼─────┤
-      // │ ··· │ CAPS│     │     │     │ RGB │                  │ HOME│ PGDN│ PGUP│ END │     │RSHFT│
+      // │ ··· │ CAPS│     │     │     │ RGB │     ···  ···     │ HOME│ PGDN│ PGUP│ END │     │RSHFT│
       // └─────┴─────┴─────┴─────┴─────┴─────┴──────────────────┴─────┴─────┴─────┴─────┴─────┴─────┘
       // ┌─────┬─────┬─────┬─────┬─────┬──────────────────────────────┬─────┬─────┬─────┬─────┬─────┐
       // │ ··· │ ··· │ ··· │ ··· │ ··· │                              │ ··· │ ··· │ ··· │ ··· │ ··· │
@@ -84,7 +91,7 @@
           &trans   &trans      &trans    &trans     &trans                         &trans  &trans    &trans   &trans    &trans
       >;
 
-      sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_PREV C_NEXT>;
+      sensor-bindings = <&inc_dec_kp C_PREV C_NEXT &inc_dec_kp C_VOL_DN C_VOL_UP>;
     };
 
     raise_layer {
@@ -96,7 +103,7 @@
       // ├─────┼─────┼─────┼─────┼─────┼─────┼──────────────────┼─────┼─────┼─────┼─────┼─────┼─────┤
       // │ ··· │ ESC │     │     │     │     │                  │  =  │  -  │  [  │  ]  │  \  │  `  │
       // ├─────┼─────┼─────┼─────┼─────┼─────┼──────────────────┼─────┼─────┼─────┼─────┼─────┼─────┤
-      // │ ··· │ CAPS│     │     │     │     │                  │  +  │  _  │  {  │  }  │  |  │  ~  │
+      // │ ··· │ CAPS│     │     │     │     │     ···  ···     │  +  │  _  │  {  │  }  │  |  │  ~  │
       // └─────┴─────┴─────┴─────┴─────┴─────┴──────────────────┴─────┴─────┴─────┴─────┴─────┴─────┘
       // ┌─────┬─────┬─────┬─────┬─────┬──────────────────────────────┬─────┬─────┬─────┬─────┬─────┐
       // │ ··· │ ··· │ ··· │ ··· │ ··· │                              │ ··· │ ··· │ ··· │ ··· │ ··· │
@@ -110,12 +117,12 @@
           &trans       &trans       &trans       &trans          &trans                &trans    &trans    &trans    &trans    &trans
       >;
 
-      sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_PREV C_NEXT>;
+      sensor-bindings = <&inc_dec_kp C_PREV C_NEXT &inc_dec_kp C_VOL_DN C_VOL_UP>;
     };
 
     adjust_layer {
       // ┌─────┬─────┬─────┬─────┬─────┬─────┬──────────────────┬─────┬─────┬─────┬─────┬─────┬─────┐
-      // │ UNLK│     │     │     │     │     │                  │DAYZA│     │     │     │     │     │
+      // │UNLCK│     │     │     │     │     │                  │DAYZ │AB:I │WDOGS│     │     │     │
       // ├─────┼─────┼─────┼─────┼─────┼─────┼──────────────────┼─────┼─────┼─────┼─────┼─────┼─────┤
       // │     │     │     │     │     │     │                  │     │     │     │     │     │     │
       // ├─────┼─────┼─────┼─────┼─────┼─────┼──────────────────┼─────┼─────┼─────┼─────┼─────┼─────┤
@@ -129,19 +136,19 @@
       // UNLK = unlock Sofle Studio  ·  m = mouse move  ·  s = scroll  ·  ··· = transparent
       display-name = "adjust";
       bindings = <
-        &studio_unlock &none          &none          &none        &none           &none                          &tog DAYZA      &none           &none         &none            &none   &none
+        &studio_unlock &none          &none          &none        &none           &none                          &tog DAYZ       &tog ABI        &tog WDOGS    &none            &none   &none
         &none          &none          &none          &none        &none           &none                          &none           &none           &none         &none            &none   &none
         &mkp MB5       &mkp MB4       &mkp MB2       &mkp MB3     &mkp MB1        &none                          &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &none   &none
         &bt BT_CLR     &msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_UP &msc SCRL_RIGHT &none   &trans    &trans       &none           &none           &none         &none            &none   &none
          &trans       &trans       &trans       &trans          &trans                &trans    &trans    &trans    &trans    &trans
       >;
-      sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_PREV C_NEXT>;
+      sensor-bindings = <&inc_dec_kp C_PREV C_NEXT &inc_dec_kp C_VOL_DN C_VOL_UP>;
     };
 
-    dayza_layer {
-      display-name = "dayz a";
+    dayz_layer {
+      display-name = "dayz";
       // ┌─────┬─────┬─────┬─────┬─────┬─────┬──────────────────┬─────┬─────┬─────┬─────┬─────┬─────┐
-      // │ ESC │  1  │  2  │  3  │  4  │  5  │                  │BASE │     │     │     │     │     │
+      // │ ESC │  1  │  2  │  3  │  4  │  5  │                  │     │     │     │     │     │DAYZ │
       // ├─────┼─────┼─────┼─────┼─────┼─────┼──────────────────┼─────┼─────┼─────┼─────┼─────┼─────┤
       // │ TAB │     │  Q  │  W  │  E  │  R  │                  │     │     │     │     │     │     │
       // ├─────┼─────┼─────┼─────┼─────┼─────┼──────────────────┼─────┼─────┼─────┼─────┼─────┼─────┤
@@ -150,20 +157,20 @@
       // │ CTRL│  B  │  X  │     │  C  │  G  │     ···  ···     │     │     │     │     │     │     │
       // └─────┴─────┴─────┴─────┴─────┴─────┴──────────────────┴─────┴─────┴─────┴─────┴─────┴─────┘
       // ┌─────┬─────┬─────┬─────┬─────┬──────────────────────────────┬─────┬─────┬─────┬─────┬─────┐
-      // │     │     │     │DAYZB│SPACE│                              │     │     │     │     │     │
+      // │     │     │     │DAYZ │SPACE│                              │     │     │     │     │     │
       // └─────┴─────┴─────┴─────┴─────┴──────────────────────────────┴─────┴─────┴─────┴─────┴─────┘
       bindings = <
-        &kp ESC   &kp N1 &kp N2  &kp N3 &kp N4 &kp N5                           &tog DAYZA &none  &none  &none  &none  &none
-        &kp TAB   &none  &kt Q   &kp W  &kt E  &kp R                            &none      &none  &none  &none  &none  &none
-        &kp LSHFT &none  &kp A  &kp S   &kp D  &kp F                            &none      &none  &none  &none  &none  &none
-        &kp LCTRL &kp B  &kp X   &none  &kp C  &kp G     &trans     &trans      &none      &none  &none  &none  &none  &none
-          &none  &none  &none  &mo DAYZB &kp SPACE                                 &none  &none  &none  &none  &none
+        &kp ESC   &kp N1 &kp N2  &kp N3 &kp N4 &kp N5                           &none  &none  &none  &none  &none  &tog DAYZ
+        &kp TAB   &none  &kt Q   &kp W  &kt E  &kp R                            &none  &none  &none  &none  &none  &none
+        &kp LSHFT &none  &kp A  &kp S   &kp D  &kp F                            &none  &none  &none  &none  &none  &none
+        &kp LCTRL &kp B  &kp X   &none  &kp C  &kp G     &trans     &trans      &none  &none  &none  &none  &none  &none
+          &none  &none  &none  &mo DAYZALT &kp SPACE                                 &none  &none  &none  &none  &none
       >;
-      sensor-bindings = <&inc_dec_kp PG_DN PG_UP &inc_dec_kp PG_DN PG_UP>;
+      sensor-bindings = <&inc_dec_kp PG_DN PG_UP &inc_dec_kp C_VOL_DN C_VOL_UP>;
     };
     
-    dayzb_layer {
-      display-name = "dayz b";
+    dayz_alt_layer {
+      display-name = "dayz alt";
       // ┌─────┬─────┬─────┬─────┬─────┬─────┬──────────────────┬─────┬─────┬─────┬─────┬─────┬─────┐
       // │ ESC │  6  │  7  │  8  │  9  │  0  │                  │     │     │     │     │     │     │
       // ├─────┼─────┼─────┼─────┼─────┼─────┼──────────────────┼─────┼─────┼─────┼─────┼─────┼─────┤
@@ -171,19 +178,115 @@
       // ├─────┼─────┼─────┼─────┼─────┼─────┼──────────────────┼─────┼─────┼─────┼─────┼─────┼─────┤
       // │ SHFT│     │  A  │  S  │  D  │  F  │                  │     │     │     │     │     │     │
       // ├─────┼─────┼─────┼─────┼─────┼─────┼──────────────────┼─────┼─────┼─────┼─────┼─────┼─────┤
-      // │ CTRL│  B  │     │     │  C  │  G  │    PG_UP PG_DN   │     │     │     │     │     │     │
+      // │ CTRL│  B  │     │     │  C  │  G  │     ···  ···     │     │     │     │     │     │     │
       // └─────┴─────┴─────┴─────┴─────┴─────┴──────────────────┴─────┴─────┴─────┴─────┴─────┴─────┘
       // ┌─────┬─────┬─────┬─────┬─────┬──────────────────────────────┬─────┬─────┬─────┬─────┬─────┐
-      // │     │     │     │ ... │SPACE│                              │     │     │     │     │     │
+      // │LGUI │     │     │ ... │SPACE│                              │     │     │     │     │     │
       // └─────┴─────┴─────┴─────┴─────┴──────────────────────────────┴─────┴─────┴─────┴─────┴─────┘
       bindings = <
-        &kp ESC   &kp N1 &kp N2  &kp N3 &kp N4 &kp N5                           &none  &none  &none  &none  &none  &none
+        &kp ESC   &kp N6 &kp N7  &kp N8 &kp N9 &kp N0                           &none  &none  &none  &none  &none  &none
         &kp TAB   &none  &kt Q   &kp W  &kt E  &kp T                            &none  &none  &none  &none  &none  &none
         &kp LSHFT &none  &kp S   &kp D  &kp F  &kp F                            &none  &none  &none  &none  &none  &none
         &kp LCTRL &kp B  &none   &none  &kp C  &kp G     &trans     &trans      &none  &none  &none  &none  &none  &none
-          &none  &none  &none  &trans &kp SPACE                                 &none  &none  &none  &none  &none
+          &kp LGUI  &none  &none  &trans &kp SPACE                                 &none  &none  &none  &none  &none
       >;
-      sensor-bindings = <&inc_dec_kp PG_DN PG_UP &inc_dec_kp PG_DN PG_UP>;
+      sensor-bindings = <&inc_dec_kp PG_DN PG_UP &inc_dec_kp C_VOL_DN C_VOL_UP>;
+    };
+
+    abi_layer {
+      display-name = "ab:i";
+      // ┌─────┬─────┬─────┬─────┬─────┬─────┬──────────────────┬─────┬─────┬─────┬─────┬─────┬─────┐
+      // │ ESC │  1  │  2  │  3  │  4  │  5  │                  │     │     │     │     │     │AB:I │
+      // ├─────┼─────┼─────┼─────┼─────┼─────┼──────────────────┼─────┼─────┼─────┼─────┼─────┼─────┤
+      // │ TAB │     │  Q  │  W  │  E  │  R  │                  │     │     │     │     │     │     │
+      // ├─────┼─────┼─────┼─────┼─────┼─────┼──────────────────┼─────┼─────┼─────┼─────┼─────┼─────┤
+      // │ SHFT│     │  A  │  S  │  D  │  F  │                  │     │     │     │     │     │     │
+      // ├─────┼─────┼─────┼─────┼─────┼─────┼──────────────────┼─────┼─────┼─────┼─────┼─────┼─────┤
+      // │ CTRL│  B  │  X  │     │  C  │  G  │     ···  ···     │     │     │     │     │     │     │
+      // └─────┴─────┴─────┴─────┴─────┴─────┴──────────────────┴─────┴─────┴─────┴─────┴─────┴─────┘
+      // ┌─────┬─────┬─────┬─────┬─────┬──────────────────────────────┬─────┬─────┬─────┬─────┬─────┐
+      // │     │     │     │AB:I │SPACE│                              │     │     │     │     │     │
+      // └─────┴─────┴─────┴─────┴─────┴──────────────────────────────┴─────┴─────┴─────┴─────┴─────┘
+      bindings = <
+        &kp ESC   &kp N1 &kp N2  &kp N3 &kp N4 &kp N5                           &none  &none  &none  &none  &none  &tog ABI
+        &kp TAB   &none  &kt Q   &kp W  &kt E  &kp R                            &none  &none  &none  &none  &none  &none
+        &kp LSHFT &none  &kp A  &kp S   &kp D  &kp F                            &none  &none  &none  &none  &none  &none
+        &kp LCTRL &kp B  &kp X   &none  &kp C  &kp G     &trans     &trans      &none  &none  &none  &none  &none  &none
+          &none  &none  &none  &mo ABIALT &kp SPACE                                 &none  &none  &none  &none  &none
+      >;
+      sensor-bindings = <&inc_dec_kp PG_DN PG_UP &inc_dec_kp C_VOL_DN C_VOL_UP>;
+    };
+    
+    abi_alt_layer {
+      display-name = "ab:i alt";
+      // ┌─────┬─────┬─────┬─────┬─────┬─────┬──────────────────┬─────┬─────┬─────┬─────┬─────┬─────┐
+      // │ ESC │  6  │  7  │  8  │  9  │  0  │                  │     │     │     │     │     │     │
+      // ├─────┼─────┼─────┼─────┼─────┼─────┼──────────────────┼─────┼─────┼─────┼─────┼─────┼─────┤
+      // │ TAB │     │  Q  │  W  │  E  │  T  │                  │     │     │     │     │     │     │
+      // ├─────┼─────┼─────┼─────┼─────┼─────┼──────────────────┼─────┼─────┼─────┼─────┼─────┼─────┤
+      // │ SHFT│     │  A  │  S  │  D  │  F  │                  │     │     │     │     │     │     │
+      // ├─────┼─────┼─────┼─────┼─────┼─────┼──────────────────┼─────┼─────┼─────┼─────┼─────┼─────┤
+      // │ CTRL│  B  │     │     │  C  │  G  │     ···  ···     │     │     │     │     │     │     │
+      // └─────┴─────┴─────┴─────┴─────┴─────┴──────────────────┴─────┴─────┴─────┴─────┴─────┴─────┘
+      // ┌─────┬─────┬─────┬─────┬─────┬──────────────────────────────┬─────┬─────┬─────┬─────┬─────┐
+      // │LGUI │     │     │ ... │SPACE│                              │     │     │     │     │     │
+      // └─────┴─────┴─────┴─────┴─────┴──────────────────────────────┴─────┴─────┴─────┴─────┴─────┘
+      bindings = <
+        &kp ESC   &kp N6 &kp N7  &kp N8 &kp N9 &kp N0                           &none  &none  &none  &none  &none  &none
+        &kp TAB   &none  &kt Q   &kp W  &kt E  &kp T                            &none  &none  &none  &none  &none  &none
+        &kp LSHFT &none  &kp S   &kp D  &kp F  &kp F                            &none  &none  &none  &none  &none  &none
+        &kp LCTRL &kp B  &none   &none  &kp C  &kp G     &trans     &trans      &none  &none  &none  &none  &none  &none
+          &kp LGUI  &none  &none  &trans &kp SPACE                                 &none  &none  &none  &none  &none
+      >;
+      sensor-bindings = <&inc_dec_kp PG_DN PG_UP &inc_dec_kp C_VOL_DN C_VOL_UP>;
+    };
+
+    wdogs_layer {
+      display-name = "wdogs";
+      // ┌─────┬─────┬─────┬─────┬─────┬─────┬──────────────────┬─────┬─────┬─────┬─────┬─────┬─────┐
+      // │ ESC │  1  │  2  │  3  │  4  │  5  │                  │     │     │     │     │     │WDOGS│
+      // ├─────┼─────┼─────┼─────┼─────┼─────┼──────────────────┼─────┼─────┼─────┼─────┼─────┼─────┤
+      // │ TAB │     │  Q  │  W  │  E  │  R  │                  │     │     │     │     │     │     │
+      // ├─────┼─────┼─────┼─────┼─────┼─────┼──────────────────┼─────┼─────┼─────┼─────┼─────┼─────┤
+      // │ SHFT│     │  A  │  S  │  D  │  F  │                  │     │     │     │     │     │     │
+      // ├─────┼─────┼─────┼─────┼─────┼─────┼──────────────────┼─────┼─────┼─────┼─────┼─────┼─────┤
+      // │ CTRL│  B  │  X  │     │  C  │  G  │     ···  ···     │     │     │     │     │     │     │
+      // └─────┴─────┴─────┴─────┴─────┴─────┴──────────────────┴─────┴─────┴─────┴─────┴─────┴─────┘
+      // ┌─────┬─────┬─────┬─────┬─────┬──────────────────────────────┬─────┬─────┬─────┬─────┬─────┐
+      // │     │     │     │WDOGS│SPACE│                              │     │     │     │     │     │
+      // └─────┴─────┴─────┴─────┴─────┴──────────────────────────────┴─────┴─────┴─────┴─────┴─────┘
+      bindings = <
+        &kp ESC   &kp N1 &kp N2  &kp N3 &kp N4 &kp N5                           &none  &none  &none  &none  &none  &tog WDOGS
+        &kp TAB   &none  &kt Q   &kp W  &kt E  &kp R                            &none  &none  &none  &none  &none  &none
+        &kp LSHFT &none  &kp A  &kp S   &kp D  &kp F                            &none  &none  &none  &none  &none  &none
+        &kp LCTRL &kp B  &kp X   &none  &kp C  &kp G     &trans     &trans      &none  &none  &none  &none  &none  &none
+          &none  &none  &none  &mo WDOGSALT &kp SPACE                                 &none  &none  &none  &none  &none
+      >;
+      sensor-bindings = <&inc_dec_kp PG_DN PG_UP &inc_dec_kp C_VOL_DN C_VOL_UP>;
+    };
+    
+    wdogs_alt_layer {
+      display-name = "wdogs alt";
+      // ┌─────┬─────┬─────┬─────┬─────┬─────┬──────────────────┬─────┬─────┬─────┬─────┬─────┬─────┐
+      // │ ESC │  6  │  7  │  8  │  9  │  0  │                  │     │     │     │     │     │     │
+      // ├─────┼─────┼─────┼─────┼─────┼─────┼──────────────────┼─────┼─────┼─────┼─────┼─────┼─────┤
+      // │ TAB │     │  Q  │  W  │  E  │  T  │                  │     │     │     │     │     │     │
+      // ├─────┼─────┼─────┼─────┼─────┼─────┼──────────────────┼─────┼─────┼─────┼─────┼─────┼─────┤
+      // │ SHFT│     │  A  │  S  │  D  │  F  │                  │     │     │     │     │     │     │
+      // ├─────┼─────┼─────┼─────┼─────┼─────┼──────────────────┼─────┼─────┼─────┼─────┼─────┼─────┤
+      // │ CTRL│  B  │     │     │  C  │  G  │     ···  ···     │     │     │     │     │     │     │
+      // └─────┴─────┴─────┴─────┴─────┴─────┴──────────────────┴─────┴─────┴─────┴─────┴─────┴─────┘
+      // ┌─────┬─────┬─────┬─────┬─────┬──────────────────────────────┬─────┬─────┬─────┬─────┬─────┐
+      // │LGUI │     │     │ ... │SPACE│                              │     │     │     │     │     │
+      // └─────┴─────┴─────┴─────┴─────┴──────────────────────────────┴─────┴─────┴─────┴─────┴─────┘
+      bindings = <
+        &kp ESC   &kp N6 &kp N7  &kp N8 &kp N9 &kp N0                           &none  &none  &none  &none  &none  &none
+        &kp TAB   &none  &kt Q   &kp W  &kt E  &kp T                            &none  &none  &none  &none  &none  &none
+        &kp LSHFT &none  &kp S   &kp D  &kp F  &kp F                            &none  &none  &none  &none  &none  &none
+        &kp LCTRL &kp B  &kp X   &none  &kp C  &kp G     &trans     &trans      &none  &none  &none  &none  &none  &none
+          &kp LGUI  &none  &none  &trans &kp SPACE                                 &none  &none  &none  &none  &none
+      >;
+      sensor-bindings = <&inc_dec_kp PG_DN PG_UP &inc_dec_kp C_VOL_DN C_VOL_UP>;
     };
   };
 };
