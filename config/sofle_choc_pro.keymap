@@ -194,10 +194,6 @@
 
     abi_layer {
       display-name = "ab:i";
-      &mt {
-        tapping-term-ms = <400>;
-        flavor = "tap-preferred";
-      };
       // ┌─────┬─────┬─────┬─────┬─────┬─────┬──────────────────┬─────┬─────┬─────┬─────┬─────┬─────┐
       // │ ESC │  4  │  2  │  3  │  1  │  5  │                  │     │     │     │     │     │!AB:I│
       // ├─────┼─────┼─────┼─────┼─────┼─────┼──────────────────┼─────┼─────┼─────┼─────┼─────┼─────┤
@@ -211,6 +207,11 @@
       // │     │     │     │AB:I │SPACE│                              │     │     │     │     │     │
       // └─────┴─────┴─────┴─────┴─────┴──────────────────────────────┴─────┴─────┴─────┴─────┴─────┘
       bindings = <
+        &mt {
+          tapping-term-ms = <400>;
+          flavor = "tap-preferred";
+        };
+
         &kp ESC   &kp N4 &kp N2  &kp N3 &kp N1  &kp N5                           &none  &none  &none  &none  &none  &tog ABI
         &kp TAB   &none  &kp Q   &kp W  &kp E   &kp R                            &none  &none  &none  &none  &none  &none
         &kp LSHFT &kp V  &kp A   &kp S  &kp D   &kp F                            &none  &none  &none  &none  &none  &none
