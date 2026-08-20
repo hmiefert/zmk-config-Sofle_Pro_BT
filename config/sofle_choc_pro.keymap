@@ -195,7 +195,7 @@
     abi_layer {
       display-name = "ab:i";
       &mt {
-        tapping-term-ms = <400>;`
+        tapping-term-ms = <400>;
         flavor = "tap-preferred";
       };
       // ┌─────┬─────┬─────┬─────┬─────┬─────┬──────────────────┬─────┬─────┬─────┬─────┬─────┬─────┐
