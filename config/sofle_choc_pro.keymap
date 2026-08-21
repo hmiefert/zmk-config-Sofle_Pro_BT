@@ -44,7 +44,7 @@
         compatible = "zmk,behavior-hold-tap";
         #binding-cells = <2>;
         flavor = "tap-preferred";
-        tapping-term-ms = <400>;
+        tapping-term-ms = <350>;
         bindings = <&kp>, <&kp>;
         display-name = "Mod-Tap";
     };
@@ -222,7 +222,7 @@
         &kp TAB   &none  &kp Q   &kp W  &kp E   &kp R                            &none  &none  &none  &none  &none  &none
         &kp LSHFT &kp V  &kp A   &kp S  &kp D   &kp F                            &none  &none  &none  &none  &none  &none
         &kp LCTRL &kp B  &none   &none  &mt Z C &kp G     &trans     &trans      &none  &none  &none  &none  &none  &none
-          &none  &none  &none  &mo ABIALT &kp SPACE                                 &none  &none  &none  &none  &none
+          &none  &none  &none  &mo ABIALT &kp SPACE                                &none  &none  &none  &none  &none
       >;
       sensor-bindings = <&inc_dec_kp PG_DN PG_UP &inc_dec_kp C_VOL_DN C_VOL_UP>;
     };
@@ -256,21 +256,21 @@
       // ┌─────┬─────┬─────┬─────┬─────┬─────┬──────────────────┬─────┬─────┬─────┬─────┬─────┬─────┐
       // │ ESC │  1  │  2  │  3  │  4  │  5  │                  │     │     │     │     │     │!WDOG│
       // ├─────┼─────┼─────┼─────┼─────┼─────┼──────────────────┼─────┼─────┼─────┼─────┼─────┼─────┤
-      // │ TAB │     │  Q  │  W  │  E  │  R  │                  │     │     │     │     │     │     │
+      // │ TAB │  K  │  Q  │  W  │  E  │  R  │                  │     │     │     │     │     │     │
       // ├─────┼─────┼─────┼─────┼─────┼─────┼──────────────────┼─────┼─────┼─────┼─────┼─────┼─────┤
-      // │ SHFT│     │  A  │  S  │  D  │  F  │                  │     │     │     │     │     │     │
+      // │ SHFT│  J  │  A  │  S  │  D  │  F  │                  │     │     │     │     │     │     │
       // ├─────┼─────┼─────┼─────┼─────┼─────┼──────────────────┼─────┼─────┼─────┼─────┼─────┼─────┤
-      // │ CTRL│  B  │  X  │     │  C  │  G  │     ···  ···     │     │     │     │     │     │     │
+      // │ CTRL│  B  │     │     │ X|C │  G  │     ···  ···     │     │     │     │     │     │     │
       // └─────┴─────┴─────┴─────┴─────┴─────┴──────────────────┴─────┴─────┴─────┴─────┴─────┴─────┘
       // ┌─────┬─────┬─────┬─────┬─────┬──────────────────────────────┬─────┬─────┬─────┬─────┬─────┐
       // │     │     │     │WDOGS│SPACE│                              │     │     │     │     │     │
       // └─────┴─────┴─────┴─────┴─────┴──────────────────────────────┴─────┴─────┴─────┴─────┴─────┘
       bindings = <
-        &kp ESC   &kp N1 &kp N2  &kp N3 &kp N4 &kp N5                           &none  &none  &none  &none  &none  &tog WDOGS
-        &kp TAB   &none  &kp Q   &kp W  &kp E  &kp R                            &none  &none  &none  &none  &none  &none
-        &kp LSHFT &none  &kp A   &kp S  &kp D  &kp F                            &none  &none  &none  &none  &none  &none
-        &kp LCTRL &kp B  &kp X   &none  &kp C  &kp G     &trans     &trans      &none  &none  &none  &none  &none  &none
-          &none  &none  &none  &mo WDOGSALT &kp SPACE                                 &none  &none  &none  &none  &none
+        &kp ESC   &kp N1 &kp N2  &kp N3 &kp N4       &kp N5                           &none  &none  &none  &none  &none  &tog WDOGS
+        &kp TAB   &kp K  &kp Q   &kp W  &kp E        &kp R                            &none  &none  &none  &none  &none  &none
+        &kp LSHFT &kp J  &kp A   &kp S  &kp D        &kp F                            &none  &none  &none  &none  &none  &none
+        &kp LALT  &kp B  &none   &none  &mt LCTRL C  &kp G     &trans     &trans      &none  &none  &none  &none  &none  &none
+          &none  &none  &none  &mo WDOGSALT &kp SPACE                               &none  &none  &none  &none  &none
       >;
       sensor-bindings = <&inc_dec_kp PG_DN PG_UP &inc_dec_kp C_VOL_DN C_VOL_UP>;
     };
@@ -280,21 +280,21 @@
       // ┌─────┬─────┬─────┬─────┬─────┬─────┬──────────────────┬─────┬─────┬─────┬─────┬─────┬─────┐
       // │ ESC │  6  │  7  │  8  │  9  │  0  │                  │     │     │     │     │     │     │
       // ├─────┼─────┼─────┼─────┼─────┼─────┼──────────────────┼─────┼─────┼─────┼─────┼─────┼─────┤
-      // │ TAB │     │ Q(t)│  W  │ E(t)│  T  │                  │     │     │     │     │     │     │
+      // │ TAB │  J  │ Q(t)│  W  │ E(t)│  T  │                  │     │     │     │     │     │     │
       // ├─────┼─────┼─────┼─────┼─────┼─────┼──────────────────┼─────┼─────┼─────┼─────┼─────┼─────┤
-      // │ SHFT│     │  A  │  S  │  D  │  F  │                  │     │     │     │     │     │     │
+      // │ SHFT│  K  │  A  │  S  │  D  │  F  │                  │     │     │     │     │     │     │
       // ├─────┼─────┼─────┼─────┼─────┼─────┼──────────────────┼─────┼─────┼─────┼─────┼─────┼─────┤
-      // │ CTRL│  B  │  X  │     │  C  │  G  │     ···  ···     │     │     │     │     │     │     │
+      // │ CTRL│  B  │     │     │ X|C │  G  │     ···  ···     │     │     │     │     │     │     │
       // └─────┴─────┴─────┴─────┴─────┴─────┴──────────────────┴─────┴─────┴─────┴─────┴─────┴─────┘
       // ┌─────┬─────┬─────┬─────┬─────┬──────────────────────────────┬─────┬─────┬─────┬─────┬─────┐
       // │LGUI │     │     │ ... │SPACE│                              │     │     │     │     │     │
       // └─────┴─────┴─────┴─────┴─────┴──────────────────────────────┴─────┴─────┴─────┴─────┴─────┘
       bindings = <
-        &kp ESC   &kp N6 &kp N7  &kp N8 &kp N9 &kp N0                           &none  &none  &none  &none  &none  &none
-        &kp TAB   &none  &kt Q   &kp W  &kt E  &kp T                            &none  &none  &none  &none  &none  &none
-        &kp LSHFT &none  &kp A   &kp S  &kp D  &kp F                            &none  &none  &none  &none  &none  &none
-        &kp LCTRL &kp B  &kp X   &none  &kp C  &kp G     &trans     &trans      &none  &none  &none  &none  &none  &none
-          &kp LGUI  &none  &none  &trans &kp SPACE                                 &none  &none  &none  &none  &none
+        &kp ESC   &kp N6 &kp N7  &kp N8 &kp N9   &kp N0                           &none  &none  &none  &none  &none  &none
+        &kp TAB   &kp J  &kt Q   &kp W  &kt E    &kp T                            &none  &none  &none  &none  &none  &none
+        &kp LSHFT &kp K  &kp A   &kp S  &kp D    &kp F                            &none  &none  &none  &none  &none  &none
+        &kp LCTRL &kp B  &none   &none  &mt X C  &kp G     &trans     &trans      &none  &none  &none  &none  &none  &none
+          &kp LGUI  &none  &none  &trans &kp SPACE                                  &none  &none  &none  &none  &none
       >;
       sensor-bindings = <&inc_dec_kp PG_DN PG_UP &inc_dec_kp C_VOL_DN C_VOL_UP>;
     };
